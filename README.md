@@ -20,13 +20,22 @@ waw add ngx-stripe
 # Step 5: Create API-Key
 ### Write in a browser stripe.com and regestration
 
-# Step 6: Find API-Key
+# Step 6: Find API-Key Secret Key
 ### In your stripe.com you must copy Secret key for developers in bottom right corner
 
-# Step 7: Write API-Key
+# Step 7: Write API-Key Secret Key
 ### Your must find file is config.json and add a part of the code in the object at the very end:
 ```
 "stripe": "your Secret key"
+```
+
+# Step 8: Find API-Key Publishable Key
+### In your stripe.com you must copy Publishable key for developers in bottom right corner
+
+# Step 9: Write API-Key Publishable Key
+### Your must find file is enviroments.prod.ts and enviroments.ts and add a part of the code in the object at the very end:
+```
+stripe: "your Publishable key"
 ```
 
 # Step 8: Payment
