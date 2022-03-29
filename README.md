@@ -38,5 +38,5 @@ waw add ngx-stripe
 stripe: "your Publishable key"
 ```
 
-# Step 8: Payment
+# Step 10: Payment
 ### When you click on the Pay button, the money comes to your account, to see it go to the site and look at the payment tab
