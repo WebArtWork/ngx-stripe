@@ -5,8 +5,7 @@
 npm install stripe-angular @types/stripe-v3 --save
 
 # Step 2: Installation waw-stripe
-### In terminal root/ write:
-waw add waw-stripe
+### Go to the waw-stripe in WebArtWork
 
 # Step 3: Installation ngx-stripe
 ### In terminal root/client write:
