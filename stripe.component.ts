@@ -26,7 +26,6 @@ export class StripeComponent {
 	constructor(
 
 		public st: StripeService,
-		public ch: ChemistryService,
 		private http: HttpService
 	) {
 
