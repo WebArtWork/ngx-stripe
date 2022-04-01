@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { StripeService } from './stripe.service';
-import { ChemistryService } from 'src/app/services';
 import { HttpService } from 'wacom';
 
 
