@@ -23,9 +23,9 @@ waw add ngx-stripe
 import { StripeModule } from 'src/app/modules';
 
 @NgModule({
-	   imports: [
-       StripeModule
-	   ]
+ imports: [
+  StripeModule
+ ]
 })
 ```
 
