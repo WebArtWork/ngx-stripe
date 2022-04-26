@@ -1,8 +1,5 @@
 <div *ngIf="invalidError" style="color:red">
 	{{ invalidError.message }}
 </div>
-
-<stripe-card #stripeCard (sourceChange)="setStripeSource($event)"></stripe-card>
-
-
+<stripe-card #stripeCard (sourceChange)="sourceChange($event)"></stripe-card>
 <button type="button" (click)="stripeCard.createSource({})">Оплатить</button>

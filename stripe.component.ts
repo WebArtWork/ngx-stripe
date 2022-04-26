@@ -1,9 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { StripeService } from './stripe.service';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { HttpService } from 'wacom';
-
-
-
 @Component({
 	selector: 'stripe',
 	templateUrl: './stripe.component.html',
@@ -11,23 +7,23 @@ import { HttpService } from 'wacom';
 })
 export class StripeComponent {
 	@Input() amount: number;
-	invalidError = false
-	cardDetailsFilledOut = false
-	cardCaptureReady = 1
-
-	setStripeSource(source: stripe.Source) {
-		console.log('Stripe Source', source)
-		this.http.post("/api/stripe/source", {
-			source,
-			amount: this.amount
-		})
+	@Input() type = 'charge';
+	@Output() paid = new EventEmitter();
+	public invalidError = false;
+	public cardDetailsFilledOut = false;
+	public cardCaptureReady = 1;
+	sourceChange(source: stripe.Source) {
+		if (this.type === 'charge') {
+			this.http.post("/api/stripe/charge", {
+				amount: this.amount,
+				source
+			}, resp => {
+				if (resp) {
+					this.paid.emit();
+				}
+			});
+		}
 	}
-	constructor(
-
-		public st: StripeService,
-		private http: HttpService
-	) {
-
-	}
-
+	constructor(private http: HttpService) { }
 }
+
