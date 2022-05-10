@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
-import { CoreModule } from '@core';
 import { StripeComponent } from './stripe.component';
 import { StripeModule as Stripe } from "stripe-angular";
 import { environment } from 'src/environments/environment';
 import { ButtonModule } from '../button/button.module';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { WacomModule } from 'wacom';
 
 @NgModule({
 	imports: [
-		CoreModule,
 		Stripe.forRoot(environment.stripe),
-		ButtonModule
+		ButtonModule,
+		CommonModule,
+		FormsModule,
+		WacomModule
 	],
 	declarations: [
 		StripeComponent
